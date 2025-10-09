@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AYSHLYN Budget Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>AYSHLYN</h1>
+    <h2>Budget Calculator</h2>
+    <p>Created by ❤️ Aysha_Rizan</p>
+
+    <div class="form-group">
+      <label>Budget Title:</label>
+      <input type="text" id="budgetTitle" placeholder="Enter budget name" />
+    </div>
+
+    <div class="form-group">
+      <label>Date:</label>
+      <input type="date" id="budgetDate" />
+    </div>
+
+    <div id="expensesList">
+      <div class="expense-item">
+        <input type="text" placeholder="List" class="expenseName" />
+        <input type="number" placeholder="Amount" class="expenseAmount" />
+      </div>
+    </div>
+
+    <button id="addExpense">+ Add Next</button>
+
+    <div class="total-box">
+      <strong>Total:</strong> <span id="totalAmount">0.00</span>
+    </div>
+
+    <button id="saveBudget">💾 Save</button>
+    <button id="viewSaved">📂 Saved Budgets</button>
+    <button id="clearAll">🧹 Clear All</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
