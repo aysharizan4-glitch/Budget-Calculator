@@ -19,24 +19,26 @@ body {
 }
 
 h1 {
-  color: #081172;
+  color: #02084b;
   margin-bottom: 5px;
 }
 
 h2 {
   margin-top: 0;
-  color: #822705;
+  color: #51020f;
+   font-size: 20px;
 }
 
 .form-group {
   margin: 15px 0;
   text-align: left;
+ 
 }
 
 label {
   font-weight: bold;
-  color: #081172;
-  font-size: 25px;
+  color: #030a5a;
+  font-size: 18px;
 }
 
 input[type="text"], input[type="number"], input[type="date"] {
@@ -49,7 +51,7 @@ input[type="text"], input[type="number"], input[type="date"] {
 }
 
 button {
-  background: #fcc202;
+  background: #f0c843;
   color: #0e0e0e;
   border: none;
   padding: 10px 15px;
@@ -62,7 +64,7 @@ button {
 }
 
 button:hover {
-  background: #de740a;
+  background: #70f46b;
 }
 
 .total-box {

@@ -139,26 +139,7 @@ function openBudgetDetails(i) {
   detail.style.cssText = `
     position: fixed; inset: 0; background: white; z-index: 1000;
     padding: 20px; overflow-y: auto;
-
-  `// Share budget as text (not image)
-  document.getElementById("shareText").onclick = () => {
-  // Prepare the budget text
-  let text = `📘 Budget: ${b.title}\n📅 Date: ${b.date}\n\n`;
-  b.expenses.forEach(e => {
-    text += `${e.name}: ${e.amount.toFixed(2)}\n`;
-  });
-  text += `\n💰 Total: ${b.total.toFixed(2)}\n— Shared via AYSHLYN Budget Calculator`;
-
-  // Encode text for URL
-  const encodedText = encodeURIComponent(text);
-
-  // WhatsApp URL
-  const whatsappUrl = `https://wa.me/?text=${encodedText}`;
-
-  // Open WhatsApp in a new tab (or app if mobile)
-  window.open(whatsappUrl, "_blank");
-};
-
+  `;
 
   detail.innerHTML = `
     <div style="margin:25px 15px;padding:20px;border:1px solid #ccc;border-radius:12px;">
@@ -182,7 +163,22 @@ function openBudgetDetails(i) {
 
   document.getElementById("closeDetail").onclick = () => detail.remove();
 
-  
+  // ===================== SHARE ON WHATSAPP =====================
+  document.getElementById("shareText").onclick = () => {
+    let text = `📘 Budget: ${b.title}\n📅 Date: ${b.date}\n\n`;
+    b.expenses.forEach(e => {
+      text += `${e.name}: ${e.amount.toFixed(2)}\n`;
+    });
+    text += `\n💰 Total: ${b.total.toFixed(2)}\n— Shared via AYSHLYN Budget Calculator`;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/?text=${encodedText}`;
+
+    // Open WhatsApp in a new tab or app
+    window.open(whatsappUrl, "_blank");
+  };
+}
+
 // ===================== CLEAR ALL =====================
 clearAll.addEventListener("click", () => {
   document.getElementById("budgetTitle").value = "";
